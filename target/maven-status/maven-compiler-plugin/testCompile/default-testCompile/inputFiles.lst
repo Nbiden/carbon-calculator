@@ -1,5 +1,8 @@
 C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\data\EmissionFactorsTest.java
 C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\ElectricityCalculatorTest.java
 C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\FootprintCalculatorTest.java
+C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\MainTest.java
 C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\NaturalGasCalculatorTest.java
+C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\ReportGeneratorTest.java
 C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\TransportCalculatorTest.java
+C:\Users\HP\projects\carbon-footprint-calc\src\test\java\com\cn\carbon\UserInputTest.java

@@ -11,4 +11,16 @@ public class EmissionFactorsTest {
                 .factor("transport.gasoline_grams_per_mile");
         assertEquals(404.0, actual, 0.0001);
     }
+
+    @Test
+    void factorWithUnknownKeyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> EmissionFactors.get().factor("no.such.key"));
+    }
+
+    @Test
+    void getReturnsSameInstance() {
+        var a = EmissionFactors.get();
+        var b = EmissionFactors.get();
+        assertSame(a, b, "Should return the same singleton instance");
+    }
 }

@@ -7,49 +7,49 @@ import com.cn.carbon.ReportGenerator;
 
 <span class="nc" id="L8">public class Main {</span>
     public static void main(String[] args) {
-<span class="nc" id="L10">        System.out.println(&quot;Carbon Calculator MVP starting up...&quot;);</span>
+<span class="fc" id="L10">        System.out.println(&quot;Carbon Calculator MVP starting up...&quot;);</span>
 
         // 1. Create Scanner for console input
-<span class="nc" id="L13">        Scanner scanner = new Scanner(System.in);</span>
+<span class="fc" id="L13">        Scanner scanner = new Scanner(System.in);</span>
 
         // 2. Prompt for annual miles driven
-<span class="nc" id="L16">        System.out.print(&quot;Enter annual miles driven: &quot;);</span>
-<span class="nc" id="L17">        double miles = scanner.nextDouble();</span>
+<span class="fc" id="L16">        System.out.print(&quot;Enter annual miles driven: &quot;);</span>
+<span class="fc" id="L17">        double miles = scanner.nextDouble();</span>
 
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        if (miles &lt; 0) {</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if (miles &lt; 0) {</span>
 <span class="nc" id="L20">            System.err.println(&quot;Error: Miles driven cannot be negative.&quot;);</span>
 <span class="nc" id="L21">            System.exit(1);</span>
         }
 
         // 3. Prompt for annual electricity usage
-<span class="nc" id="L25">        System.out.print(&quot;Enter annual electricity (kWh): &quot;);</span>
-<span class="nc" id="L26">        double kwh = scanner.nextDouble();</span>
+<span class="fc" id="L25">        System.out.print(&quot;Enter annual electricity (kWh): &quot;);</span>
+<span class="fc" id="L26">        double kwh = scanner.nextDouble();</span>
 
-<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (kwh &lt; 0) {</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (kwh &lt; 0) {</span>
 <span class="nc" id="L29">            System.err.println(&quot;Error: Electricity usage cannot be negative.&quot;);</span>
 <span class="nc" id="L30">            System.exit(1);</span>
         }
 
         // 4. Prompt for annual natural gas (therms)
-<span class="nc" id="L34">        System.out.print(&quot;Enter annual natural gas (therms): &quot;);</span>
-<span class="nc" id="L35">        double therms = scanner.nextDouble();</span>
+<span class="fc" id="L34">        System.out.print(&quot;Enter annual natural gas (therms): &quot;);</span>
+<span class="fc" id="L35">        double therms = scanner.nextDouble();</span>
 
-<span class="nc bnc" id="L37" title="All 2 branches missed.">        if (therms &lt; 0) {</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (therms &lt; 0) {</span>
 <span class="nc" id="L38">            System.err.println(&quot;Error: Natural gas usage cannot be negative.&quot;);</span>
 <span class="nc" id="L39">            System.exit(1);</span>
         }
 
         // 5. Build input object
-<span class="nc" id="L43">        UserInput input = new UserInput(miles, kwh, therms);</span>
+<span class="fc" id="L43">        UserInput input = new UserInput(miles, kwh, therms);</span>
 
         // 6. Compute emissions
-<span class="nc" id="L46">        var results = new FootprintCalculator().run(input);</span>
+<span class="fc" id="L46">        var results = new FootprintCalculator().run(input);</span>
 
         // 7. Display the report
-<span class="nc" id="L49">        ReportGenerator.prettyPrint(results);</span>
+<span class="fc" id="L49">        ReportGenerator.prettyPrint(results);</span>
 
         // 8. Close scanner
-<span class="nc" id="L52">        scanner.close();</span>
-<span class="nc" id="L53">    }</span>
+<span class="fc" id="L52">        scanner.close();</span>
+<span class="fc" id="L53">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

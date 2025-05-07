@@ -36,8 +36,8 @@ public final class EmissionFactors {
 
     public double factor(String key) {
 <span class="fc" id="L38">        Double v = map.get(key);</span>
-<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if (v == null)</span>
-<span class="nc" id="L40">            throw new IllegalArgumentException(&quot;No factor for: &quot; + key);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (v == null)</span>
+<span class="fc" id="L40">            throw new IllegalArgumentException(&quot;No factor for: &quot; + key);</span>
 <span class="fc" id="L41">        return v;</span>
     }
 }
