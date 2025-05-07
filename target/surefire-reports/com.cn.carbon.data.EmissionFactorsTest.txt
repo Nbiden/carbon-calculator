@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cn.carbon.data.EmissionFactorsTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.561 s -- in com.cn.carbon.data.EmissionFactorsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.608 s -- in com.cn.carbon.data.EmissionFactorsTest

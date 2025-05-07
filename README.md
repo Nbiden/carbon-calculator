@@ -18,7 +18,7 @@ Calculates emissions from driving, electricity, and natural gas using official E
 
 ```bash
 mvn clean package
-java -jar target/carbon-calculator-1.0-SNAPSHOT-shaded.jar
+java -jar target/carbon-calculator-1.0-SNAPSHOT.jar
 ```
 
 Or via Maven exec:
