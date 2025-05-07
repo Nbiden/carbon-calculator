@@ -1,0 +1,12 @@
+{
+    "transport": {
+      "gasoline_grams_per_mile": 404
+    },
+    "electricity": {
+      "lbs_per_kwh": 0.81
+    },
+    "natural_gas": {
+      "kg_per_therm": 5.3
+    }
+  }
+  

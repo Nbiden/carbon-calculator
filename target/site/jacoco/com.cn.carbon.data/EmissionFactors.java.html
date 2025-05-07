@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmissionFactors.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">carbon-calculator</a> &gt; <a href="index.source.html" class="el_package">com.cn.carbon.data</a> &gt; <span class="el_source">EmissionFactors.java</span></div><h1>EmissionFactors.java</h1><pre class="source lang-java linenums">package com.cn.carbon.data;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.InputStream;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+public final class EmissionFactors {
+    private static EmissionFactors INSTANCE;
+<span class="fc" id="L12">    private final Map&lt;String, Double&gt; map = new ConcurrentHashMap&lt;&gt;();</span>
+
+<span class="fc" id="L14">    private EmissionFactors() {</span>
+<span class="fc" id="L15">        try (InputStream in = getClass().getClassLoader().getResourceAsStream(&quot;emission_factors.json&quot;)) {</span>
+<span class="fc" id="L16">            JsonNode root = new ObjectMapper().readTree(in);</span>
+<span class="fc" id="L17">            root.fields().forEachRemaining(category -&gt; {</span>
+<span class="fc" id="L18">                String catName = category.getKey();</span>
+<span class="fc" id="L19">                category.getValue().fields().forEachRemaining(prop -&gt; {</span>
+<span class="fc" id="L20">                    String key = catName + &quot;.&quot; + prop.getKey();</span>
+<span class="fc" id="L21">                    double value = prop.getValue().asDouble();</span>
+<span class="fc" id="L22">                    map.put(key, value);</span>
+<span class="fc" id="L23">                });</span>
+<span class="fc" id="L24">            });</span>
+<span class="nc" id="L25">        } catch (Exception e) {</span>
+<span class="nc" id="L26">            throw new RuntimeException(&quot;Failed to load emission factors&quot;, e);</span>
+<span class="fc" id="L27">        }</span>
+<span class="fc" id="L28">    }</span>
+
+    public static EmissionFactors get() {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (INSTANCE == null) {</span>
+<span class="fc" id="L32">            INSTANCE = new EmissionFactors();</span>
+        }
+<span class="fc" id="L34">        return INSTANCE;</span>
+    }
+
+    public double factor(String key) {
+<span class="fc" id="L38">        Double v = map.get(key);</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if (v == null)</span>
+<span class="nc" id="L40">            throw new IllegalArgumentException(&quot;No factor for: &quot; + key);</span>
+<span class="fc" id="L41">        return v;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

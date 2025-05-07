@@ -1,1 +1,9 @@
+com\cn\carbon\UserInput.class
+com\cn\carbon\data\EmissionFactors.class
+com\cn\carbon\FootprintCalculator.class
+com\cn\carbon\CategoryCalculator.class
 com\cn\carbon\Main.class
+com\cn\carbon\ElectricityCalculator.class
+com\cn\carbon\NaturalGasCalculator.class
+com\cn\carbon\TransportCalculator.class
+com\cn\carbon\ReportGenerator.class

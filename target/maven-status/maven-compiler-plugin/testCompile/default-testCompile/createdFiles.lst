@@ -1,0 +1,5 @@
+com\cn\carbon\FootprintCalculatorTest.class
+com\cn\carbon\NaturalGasCalculatorTest.class
+com\cn\carbon\data\EmissionFactorsTest.class
+com\cn\carbon\TransportCalculatorTest.class
+com\cn\carbon\ElectricityCalculatorTest.class

@@ -3,6 +3,8 @@ package com.cn.carbon;
 import java.util.Map;
 
 public final class ReportGenerator {
+    private static final double US_AVERAGE_METRIC_TONS = 15.0;
+
     /**
      * Pretty-prints category breakdown and total CO₂e.
      */
@@ -25,7 +27,7 @@ public final class ReportGenerator {
 
         // 5. Comparison to U.S. average (~15 t)
         System.out.printf("US average ~15 t -> you are %.0f%% of avg%n",
-                100 * total / 15.0);
+                100 * total / US_AVERAGE_METRIC_TONS);
 
     }
 }

@@ -13,16 +13,31 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // 2. Prompt for annual miles driven
-        System.out.print("Enter annual miles driven:");
+        System.out.print("Enter annual miles driven: ");
         double miles = scanner.nextDouble();
+
+        if (miles < 0) {
+            System.err.println("Error: Miles driven cannot be negative.");
+            System.exit(1);
+        }
 
         // 3. Prompt for annual electricity usage
         System.out.print("Enter annual electricity (kWh): ");
         double kwh = scanner.nextDouble();
 
+        if (kwh < 0) {
+            System.err.println("Error: Electricity usage cannot be negative.");
+            System.exit(1);
+        }
+
         // 4. Prompt for annual natural gas (therms)
         System.out.print("Enter annual natural gas (therms): ");
         double therms = scanner.nextDouble();
+
+        if (therms < 0) {
+            System.err.println("Error: Natural gas usage cannot be negative.");
+            System.exit(1);
+        }
 
         // 5. Build input object
         UserInput input = new UserInput(miles, kwh, therms);
